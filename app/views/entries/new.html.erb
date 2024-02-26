@@ -1,13 +1,8 @@
-<h1>Log details about your visit</h1>
+<h1>Log details about your visit to <%= @place["name"] %></h1>
 
 <form action="/entries" method="post">
   <p>
-    <label for="place_id">Place</label> 
-        <select name="place_id" id="place_id"> 
-            <% for place in @places %>
-              <option value="<%=place["id"]%>"><%=place["name"]%></option> 
-            <% end %>           
-        </select>
+    <input type="hidden" name="place_id" id="place_id" value="<%= @place["id"] %>">
   </p>
   <p>
     <label for="title">Title</label>
